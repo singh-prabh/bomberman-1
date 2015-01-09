@@ -10,6 +10,16 @@ This was a learning exercise that got out of hand, but a really fun one.
 
 Any feedback or improvement is most welcome.
 
+## How to play
+
+- Enter your name and click "New Game"
+- Once it's done loading, copy the URL and share with a friend
+- It'll show a code on their menu
+- They enter their name and click "Join Game"
+- Each player has to click their name on the left side to mark themselves "ready"
+- Once everyone is ready, a countdown begins, after which the game starts
+- Happy bombing!
+
 ## TODO
 
 - [ ] Refactoring
