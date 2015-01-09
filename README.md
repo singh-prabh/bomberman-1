@@ -1,5 +1,5 @@
 # Bomberman
-=========
+
 This is a port of the [classic game](http://en.wikipedia.org/wiki/Bomberman_%28video_game%29). It started on a slow work day, and is an experiment with HTML5 Canvas and WebSockets. But don't let that stop you from having fun!
 
 This repository has all the client code, including graphics, styles, etc. For the server code, please check [alizahid/bomberman-server](https://github.com/alizahid/bomberman-server).
