@@ -1,0 +1,150 @@
+
+	/* CSS */
+
+	*,
+	*:before,
+	*:after { border-radius: 0; margin: 0; outline: none; padding: 0; box-sizing: border-box; }
+
+		body { background: #291A0C url('../img/background-light.png'); color: #EEE; cursor: default; font: 300 1em/1 'visitor_tt1_brkregular', 'Helvetica Neue', 'Roboto', sans-serif; }
+
+			a { color: #FF9F1A; cursor: pointer; text-decoration: none; transition: all 300ms ease; }
+
+				a:hover { color: #DB6116; }
+
+			button,
+			input { background: #F6F7F8; border: none; border-radius: 0.15em; display: block; font: inherit; line-height: normal; padding: 0.8em; transition: all 100ms linear; }
+
+				button { background: url('../img/background-dark.png'); border-top: none; color: #FFF; cursor: pointer; padding: 0.8em 0; text-align: center; }
+
+					button:active { background: url('../img/background-light.png'); }
+
+				input:focus { background: #ECF0F1; }
+
+			h1,
+			h2,
+			h3 { color: #ECF0F1; font-weight: 100; margin: 0; }
+
+				h1 { font-size: 2em; }
+
+				h2 { font-size: 1.6em; margin: 0.5em 0 1em 0; }
+
+				h3 { font-size: 1.2em; margin: 1.5em 0 0 0; text-transform: uppercase; }
+
+			img { border: none; max-width: 100%; vertical-align: top; }
+
+			p { line-height: 1.2; margin: 1em 0; }
+
+			strong { font-weight: 300; }
+
+			ul,
+			ol { margin: 0; }
+
+				li { list-style: none; margin: 1em 0; }
+
+				ul li { list-style: square; }
+
+				ol li { list-style: decimal; }
+
+	/* Layout */
+
+	.wrapper { background: url('../img/background-dark.png'); border-radius: 0.5em; height: 616px; margin: 5em auto; position: relative; width: 866px; }
+
+		section,
+		.game { height: 616px; float: left; overflow: hidden; }
+
+			section { position: relative; width: 250px; }
+
+				.about,
+				.status { padding: 1em; position: absolute; width: 100%; }
+
+					.status { display: none; height: 50%; overflow: auto; padding: 0 1em; }
+
+						.players { }
+
+							.players > div { background: url('../img/background-light.png'); border-radius: 0.25rem; cursor: pointer; font-size: 1.5em; height: 3rem; line-height: 3rem; margin: 1rem 0; overflow: hidden; padding: 0 0 0 3.5rem; position: relative; }
+
+								.players > div img { height: 3em; position: absolute; left: 0; top: 0; }
+
+									.players > div:before { background-position: center; background-repeat: no-repeat; background-size: 3rem; content: ''; float: left; height: 3rem; left: 0; position: absolute; top: 0; width: 3rem; }
+
+										.players > .birdie:before { background-image: url('../img/birdie.png'); }
+										.players > .elephant:before { background-image: url('../img/elephant.png'); }
+										.players > .fishy:before { background-image: url('../img/fishy.png'); }
+										.players > .monkey:before { background-image: url('../img/monkey.png'); }
+										.players > .ram:before { background-image: url('../img/ram.png'); }
+										.players > .ox:before { background-image: url('../img/ox.png'); }
+										.players > .piggle:before { background-image: url('../img/piggle.png'); }
+										.players > .whale:before { background-image: url('../img/whale.png'); }
+
+									.players > div:after { background: #E74C3C; content: ''; height: 0.75rem; left: 1.75rem; position: absolute; top: 1.75rem; width: 0.75rem; }
+
+										.players > div.ready:after { background: #2ECC71; }
+
+						.log { bottom: 0; color: #805E36; }
+
+							.log p { line-height: 1; margin: 0.5em 0; }
+
+								.log p:first-child { color: #FFF; }
+
+			.game { background: url('../img/background.jpg') center no-repeat; background-size: cover; border-radius: 0.5em; position: relative; width: 616px; }
+
+				.menu,
+				.loading { background: rgba(0, 0, 0, 0.6); border-radius: 0.5rem; display: none; height: 100%; padding: 20px; position: absolute; width: 100%; z-index: 99; }
+
+					.loading { background: rgba(0, 0, 0, 0.9); display: block; font-size: 2em; line-height: 616px; padding: 0; text-align: center; z-index: 999; }
+
+					.menu ul { left: 50%; margin: 0; position: absolute; top: 50%; width: 30%; -webkit-transform: translateY(-50%) translateX(-50%); transform: translateY(-50%) translateX(-50%); }
+
+						.menu li { list-style: none; margin: 2em 0; }
+
+							.menu li input,
+							.menu li button { font-size: 1.3em; text-align: center; width: 100%; }
+
+								.menu li input { border-radius: 0.15em 0.15em 0 0; }
+
+								.menu li input + button { border-radius: 0 0 0.15em 0.15em; }
+
+						.show-about { background: #805E36; border-radius: 100%; bottom: 1em; color: #FFF; display: none; font-size: 1.5em; line-height: 2em; position: absolute; right: 1em; text-align: center; width: 2em; }
+
+							.show-about:hover { color: #FFF; }
+
+							.play .show-about { display: block; }
+
+		header { margin: 0 0 3em 0; }
+
+		.social { margin: 0; overflow: hidden; position: absolute; left: 270px; top: -3em; }
+
+			.social li { float: left; list-style: none; margin: 0 1em 0 0; }
+
+	canvas { margin: 20px; position: absolute; }
+
+	.growl { font-size: 0.9em; position: fixed; right: 1rem; top: 0; width: 15em; z-index: 9; }
+
+		.growl p { background: #2ECC71; border-radius: 0.2em; color: #FFF; cursor: pointer; line-height: normal; margin: 1rem 0 0 0; padding: 0.8em; position: relative; }
+
+			.growl p.sad { background: #E74C3C; }
+
+			.growl p:after { content: '\d7'; line-height: 0.4; position: absolute; right: 0.4em; top: 0.4em; }
+
+	/* Responsive */
+
+	@media screen and (min-height: 700px) {
+
+		.wrapper { left: 50%; margin: 0; position: absolute; top: 50%; -webkit-transform: translateY(-50%) translateX(-50%); transform: translateY(-50%) translateX(-50%); }
+	}
+
+	/* Animations */
+
+	@-webkit-keyframes rotateplane {
+
+		0% { -webkit-transform: perspective(120px); }
+		50% { -webkit-transform: perspective(120px) rotateY(180deg); }
+		100% { -webkit-transform: perspective(120px) rotateY(180deg) rotateX(180deg); }
+	}
+
+	@keyframes rotateplane {
+
+		0% { transform: perspective(120px) rotateX(0deg) rotateY(0deg); -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg); }
+		50% { transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg); -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg); }
+		100% { transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg); -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg); }
+	}

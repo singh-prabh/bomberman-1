@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="format-detection" content="telephone=no">
+		<title>Bomberman in JavaScript</title>
+		<link rel="stylesheet" href="assets/css/font/font.css">
+		<link rel="stylesheet" href="assets/css/master.css">
+	</head>
+
+	<body>
+		<div class="growl">
+		</div>
+		<div class="wrapper">
+			<ul class="social">
+				<li>
+					<div class="fb-like" data-href="http://alizahid.github.io/bomberman/" data-width="100%" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
+				</li>
+				<li>
+					<a class="github-button" href="https://github.com/alizahid/bomberman" data-count-href="/alizahid/bomberman/stargazers" data-count-api="/repos/alizahid/bomberman#stargazers_count">Star</a>
+				</li>
+				<li>
+					<a class="github-button" href="https://github.com/alizahid/bomberman" data-count-href="/alizahid/bomberman/network" data-count-api="/repos/alizahid/bomberman#forks_count">Fork</a>
+				</li>
+				<li>
+					<a href="https://twitter.com/share" class="twitter-share-button" data-via="alizahid0" data-hashtags="javascript,game" data-dnt="true">Tweet</a>
+				</li>
+			</ul>
+			<section>
+				<div class="about">
+					<header>
+						<h1>Bomberman</h1>
+						<h2>by <a href="http://designplox.com" target="_blank">Ali Zahid</a></h2>
+					</header>
+					<p>This is a port of the <a href="http://en.wikipedia.org/wiki/Bomberman_%28video_game%29" target="_blank">classic game</a>. It started on a slow work day, and is an experiment with HTML5 Canvas and WebSockets. But don't let that stop you from having fun!</p>
+					<h3>Controls</h3>
+					<p>Move using the <code>arrow</code> keys.</p>
+					<p>Plant bombs using the <code>ENTER</code> key.</p>
+					<h3>Credits</h3>
+					<p>Graphics by <a href="https://twitter.github.io/twemoji/" target="_blank">Twemoji</a></p>
+					<p>Textures from <a href="https://minecraft.net/" target="_blank">Minecraft</a></p>
+				</div>
+				<div class="status players">
+				</div>
+				<div class="status log">
+				</div>
+			</section>
+			<div class="game">
+				<div class="loading">
+					Loading..
+				</div>
+				<form class="menu">
+					<a href="#about" class="show-about">?</a>
+					<ul>
+						<li>
+							<input type="text" name="user-name" placeholder="Your name" tabindex="1" maxlength="10">
+							<button type="submit">New Game</button>
+						</li>
+						<li>
+							<input type="text" name="game-id" placeholder="Game ID" tabindex="2">
+							<button type="submit">Join Game</button>
+						</li>
+					</ul>
+				</form>
+				<canvas id="tiles" height="576" width="576"></canvas>
+				<canvas id="bombs" height="576" width="576"></canvas>
+				<canvas id="player-one" height="576" width="576"></canvas>
+				<canvas id="player-two" height="576" width="576"></canvas>
+				<canvas id="player-three" height="576" width="576"></canvas>
+				<canvas id="player-four" height="576" width="576"></canvas>
+			</div>
+		</div>
+	</body>
+
+	<script src="assets/lib/jquery.min.js"></script>
+	<script src="assets/lib/hashids.min.js"></script>
+	<script src="assets/js/scripts.js"></script>
+	<script src="assets/js/game.js"></script>
+
+	<script src="https://cdn.socket.io/socket.io-1.2.1.js"></script>
+	<script src="assets/js/io.js"></script>
+	<!--
+	<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) return;js = d.createElement(s); js.id = id;js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));</script>
+	-->
+</html>
