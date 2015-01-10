@@ -45,6 +45,8 @@
 		gameOn = false,
 		frozen = false,
 		startTimer = 3000,
+		movementDelay = 100,
+		movementTimer,
 		controlsBound = false,
 		player,
 		players = [],
@@ -201,26 +203,40 @@
 		{
 			if (!player || frozen) return;
 
-			if (e.which == 38)
+			if (e.which == 13)
+			{
+				player.plantBomb();
+			}
+			else if (e.which == 38)
 			{
 				player.move('up');
+
+				frozen = true;
 			}
 			else if (e.which == 40)
 			{
 				player.move('down');
+
+				frozen = true;
 			}
 			else if (e.which == 37)
 			{
 				player.move('left');
+
+				frozen = true;
 			}
 			else if (e.which == 39)
 			{
 				player.move('right');
+
+				frozen = true;
 			}
-			else if (e.which == 13)
+
+			movementTimer = setTimeout(function()
 			{
-				player.plantBomb();
-			}
+				frozen = false;
+
+			}, movementDelay);
 
 		});
 
@@ -488,6 +504,9 @@
 
 			setTimeout(this.clearBomb.bind(this), BOMB_TIMER);
 
+			//	fake bomb planting while the server responds
+			Bomb.plant(this.position.x, this.position.y);
+
 			//	notify the server
 			if (socket && player)
 			{
@@ -636,8 +655,13 @@
 		{
 			if (this.isAlive)
 			{
+				//	clear the cell before drawing bomb
+				contextBombs.clearRect(this.position.x * brickSize, this.position.y * brickSize, brickSize, brickSize);
+
+				//	draw bomb
 				contextBombs.drawImage(iconBomb, this.position.x * brickSize, this.position.y * brickSize, brickSize, brickSize);
 
+				//	update the tile with the `hasBomb` flag
 				updateTile(this.position.x, this.position.y, 'hasBomb', true);
 
 				if (this.explosionTimer) return;
@@ -646,4 +670,14 @@
 				this.explosionTimer = setTimeout(this.detonate.bind(this), BOMB_TIMER);
 			}
 		}
+	}
+
+	//	fake bomb plant on client-side
+	Bomb.plant = function(x, y)
+	{
+		//	clear the cell before drawing bomb
+		contextBombs.clearRect(x * brickSize, y * brickSize, brickSize, brickSize);
+
+		//	draw bomb
+		contextBombs.drawImage(iconBomb, x * brickSize, y * brickSize, brickSize, brickSize);
 	}
