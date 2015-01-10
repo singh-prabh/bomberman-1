@@ -23,6 +23,12 @@ Any feedback or improvement is most welcome.
 ## TODO
 
 - [ ] Refactoring
+- [ ] New, licensed artwork (Anyone want to help here?)
+
+## Changelog
+
+- Movement delay added for a consistent play speed
+- Fake bomb plant added until the server sends actual message
 
 ### Credits
 
