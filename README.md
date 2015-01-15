@@ -25,6 +25,12 @@ Any feedback or improvement is most welcome.
 - [ ] Refactoring
 - [ ] New, licensed artwork (Anyone want to help here?)
 
+## Ideas
+
+- [ ] More game modes; deathmatch, crazy, fast, etc.
+- [ ] Power ups to drop from destroyed bricks to change things like frequency of bombs or speed ups, etc.
+- [ ] Sounds and music!
+
 ## Changelog
 
 - Movement delay added for a consistent play speed
